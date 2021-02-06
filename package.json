@@ -1,0 +1,16 @@
+{
+  "name": "vite-sandbox",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^2.0.0-beta.65"
+  },
+  "dependencies": {
+    "jsonld-streaming-parser": "^2.2.0",
+    "stream-browserify": "^3.0.0"
+  }
+}
