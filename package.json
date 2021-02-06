@@ -2,12 +2,14 @@
   "name": "vite-sandbox",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview"
+    "dev": "npm run dev:webpack & npm run dev:vite",
+    "dev:webpack": "webpack --watch",
+    "dev:vite": "vite"
   },
   "devDependencies": {
-    "vite": "^2.0.0-beta.65"
+    "vite": "^2.0.0-beta.65",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.5.0"
   },
   "dependencies": {
     "jsonld-streaming-parser": "^2.2.0",
