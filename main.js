@@ -1,11 +1,18 @@
-window.global = window;
+import { Parser } from 'n3';
 
-import('jsonld-streaming-parser').then(({ JsonLdParser }) => {
-    const parser = new JsonLdParser();
+const parser = new Parser();
+const quads = [];
 
-    parser.on('data', quad => console.log('quad', quad))
-    parser.on('error', error => console.error(error))
-    parser.on('end', () => console.log('done!'))
-    parser.write('{"@context":"https://schema.org","@type":"Movie","name":"Foobar"}');
-    parser.end();
-})
+parser.parse('<#it> a <https://schema.org/Movie> .', (error, quad) => {
+    if (error) {
+        console.log('error!', error);
+        return;
+    }
+
+    if (!quad) {
+        console.log('done!', quads);
+        return;
+    }
+
+    quads.push(quad);
+});
